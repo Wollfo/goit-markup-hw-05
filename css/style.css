@@ -131,6 +131,10 @@ img{
   letter-spacing: 0.02em;
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+  
+  
 }
 
 .header .contact-link {
@@ -145,6 +149,8 @@ img{
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 .nav-link:hover,
 .nav-link:focus,
@@ -206,6 +212,7 @@ img{
 
 .contact-icon{
  fill: var(--main-text-color);
+ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 .contact-icon:hover {
   fill: var(--accent-color);
@@ -383,15 +390,19 @@ padding-bottom: 30px;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: var(--main-light-color);
+  c: var(--main-light-color);
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
-
+  
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+;
 }
 .team-soc-icon{
   fill:#AFB1B8;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 
 }
 .team-soc-link:hover,
@@ -418,9 +429,11 @@ fill: var(--main-light-color);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 .our-customers-icon{
   fill: #AFB1B8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 .our-customers-link:hover,
 .our-customers-link:focus {
@@ -482,6 +495,8 @@ margin-left: 70px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 .footer-contact-item {
   display: block;
@@ -505,7 +520,7 @@ margin-left: 70px;
   justify-content: center;
   border: none;
   
-
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 .footer-soc-list{
   display: flex;
@@ -514,6 +529,8 @@ margin-left: 70px;
 }
 .footer-soc-icon{
   fill:var(--main-light-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 
 }
 .footer-soc-link:hover,
@@ -549,6 +566,8 @@ fill: var(--main-light-color);
   flex-basis: calc((100% - 60px) / 3);
   background-color: var(--main-light-color);
   position: relative;
+
+  transition: box-shodow 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
   
   
 }
@@ -596,6 +615,8 @@ box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   cursor: pointer;
   border: 1px solid var(--secondary-backgroung-color);
   border-radius: 4px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shodow 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 .btn-secondary-type:hover,
 .btn-secondary-type:focus {
@@ -646,16 +667,99 @@ box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
   
 }
 
+
+
+.overlay-box{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 .overlay{
  position: absolute;
 
   display: block;
   width: 100%;
-  height: 294px;
+  height: 100%;
   top: 0;
 
   background-color: var(--overlay-color) ;
   color: var(--main-light-color);
-  /* transform: translateY(100%); */
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
   
+}
+.example-cards:hover .overlay,
+.example-cards:focus .overlay{
+  transform: translateY(0);
+}
+
+.examples-overlay-text{
+font-size: 18px;
+line-height: 1.58
+letter: spacing 0.03em;
+color:var(--main-light-color);
+padding : 63px 24px;
+}
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  
+}
+.backdrop.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+}
+.modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  
+  width: 528px;
+  height: 581px;
+  padding: 10px;
+
+  background-color: var(--primary-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  
+}
+.modal-icon{ 
+  width: 30px;
+  height: 30px;
+
+
+  background-color: var(--primary-background-color);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  fill: #000000;
+
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+}
+.btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: auto;
+  height: auto;
+  margin: 8px;
+  background-color: var(--primary-background-color);
+  border: none;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+
+}
+.btn-close:hover .modal-icon,
+.btn-close:focus .modal-icon{
+  background-color: var(--accent-color);
+  fill: var(--main-light-color);
 }
