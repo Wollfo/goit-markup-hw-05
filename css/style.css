@@ -172,6 +172,7 @@ img{
   height: 4px;
   background-color: var(--accent-color);
   border-radius: 2px;
+  padding: 0 2px;
 
 }
 /* .nav-link:after,
